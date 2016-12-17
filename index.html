@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=1024">
     <!-- 引入 ECharts 文件 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>TOURISM OF DISNEY.SH</title>
     <script src="echarts.js"></script>
     <script src="impress.js"></script>
@@ -94,13 +94,12 @@
 </head>
 <body style="height: 100%;">
 <div id="impress">
-    <div id="1" class="step" data-x="0" data-y="0" data-z="1600" data-rotate-x="30">
-        <div id id="disney" style="height: 100vh;" > </div>
+    <div  style="height: 100vh;" class="step" data-x="0" data-y="0" data-z="1600" data-rotate-x="30">
+        <div id="disney" style="height: 100vh;"></div>
     </div>
     <script type="text/javascript">
         var dom = document.getElementById("disney");
         var myChart = echarts.init(dom);
-        var app = {};
         option = {
             title : {
                 text: '迪士尼粉丝地区画像',
@@ -160,7 +159,9 @@
             console.log("Time used:", updateTime);
         }
     </script>
-    <div id="sh_disney" style="height: 100vh;" class="step" data-x="1600" data-y="1600" data-z="1600" data-rotate-y="30" data-rotate-z="90"></div>
+    <div  class="step" data-x="1600" data-y="1600" data-z="1600" data-rotate-y="30" data-rotate-z="90">
+        <div id="sh_disney" style="height: 100vh;"></div>
+    </div>
     <script type="text/javascript">
         var dom1 = document.getElementById("sh_disney");
         var Sh_disney = echarts.init(dom1);
