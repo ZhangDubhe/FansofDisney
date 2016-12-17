@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=1024">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     <!-- 引入 ECharts 文件 -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="author" content="Zhang Dubhe"/>
@@ -160,7 +161,7 @@
             console.log("Time used:", updateTime);
         }
     </script>
-    <div id="sh_disney" style="height: 100vh;" class="step" data-x="1600" data-y="1600" data-rotate-z="90">
+    <div id="sh_disney" style="align-content:center;height: 100vh;" class="step" data-x="1600" data-y="1600" data-rotate-z="90">
 
 </div>
     <script type="text/javascript">
@@ -218,7 +219,7 @@
             ]
 
         };
-        if (option && typeof option === "object") {
+        if (option_sh && typeof option_sh === "object") {
             var startTime = +new Date();
             Sh_disney.setOption(option_sh, true);
             var endTime = +new Date();
@@ -228,12 +229,12 @@
     </script>
     <div id="after_open_china" class="step" data-x="0" data-y="3200" data-rotate-z="180">
         <center>
-            <img src="after.png" />
+            <img src="after.png" style="position:relative;left:-50px;"/>
         </center>
     </div>
     <div id="after_open_sh" class="step" data-x="-1600" data-y="1600"   data-rotate-z="270">
         <center>
-            <img src="after2.png" />
+            <img src="after2.png" style="position:relative;left:-50px;" />
         </center>
     </div>
 
