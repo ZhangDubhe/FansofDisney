@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 引入 ECharts 文件 -->
+    <title>TOURISM OF DISNEY.SH</title>
+    <script src="echarts.js"></script>
+    <script src="china.js"></script><!--Map of China-->
+    <script>
+        var disneyData=[
+            {"name":"安徽","value":"10"},
+            {"name":"北京","value":"34"},
+            {"name":"福建","value":"15"},
+            {"name":"甘肃","value":"2"},
+            {"name":"广东","value":"32"},
+            {"name":"广西","value":"3"},
+            {"name":"贵州","value":"1"},
+            {"name":"海南","value":"1"},
+            {"name":"海外","value":"31"},
+            {"name":"河北","value":"8"},
+            {"name":"河南","value":"15"},
+            {"name":"黑龙江","value":"8"},
+            {"name":"湖北","value":"18"},
+            {"name":"湖南","value":"6"},
+            {"name":"吉林","value":"6"},
+            {"name":"江苏","value":"39"},
+            {"name":"江西","value":"5"},
+            {"name":"辽宁","value":"23"},
+            {"name":"内蒙古","value":"5"},
+            {"name":"宁夏","value":"2"},
+            {"name":"其他","value":"78"},
+            {"name":"山东","value":"19"},
+            {"name":"山西","value":"7"},
+            {"name":"陕西","value":"9"},
+            {"name":"上海","value":"56"},
+            {"name":"四川","value":"19"},
+            {"name":"台湾","value":"4"},
+            {"name":"天津","value":"5"},
+            {"name":"香港","value":"4"},
+            {"name":"新疆","value":"2"},
+            {"name":"云南","value":"6"},
+            {"name":"浙江","value":"30"},
+            {"name":"重庆","value":"4"},
+            {"name":"澳门","value":"0"},
+            {"name":"西藏","value":"0"},
+            {"name":"青海","value":"0"}
+        ]
+        /*data source*/
+    </script>
+</head>
+<body style="height: 100%;background-color:lightblue;">
+    <div id="container" style="height: 100vh;"></div>
+        <script type="text/javascript">
+            var dom = document.getElementById("container");
+            var myChart = echarts.init(dom);
+            var app = {};
+            option = {
+                baseOption:{
+                    title : {
+                        text: '上海迪士尼微博粉丝地区画像',
+                        subtext: '*来自微博爬虫',
+                        left: 'center',
+                        y:40
+                    },
+                    tooltip : {
+                        trigger: 'item'
+                    },
+                    visualMap: {
+                        min: 0.00,
+                        max: 30.00,
+                        left: 'left',
+                        top: 'bottom',
+                        text:['高','低'],           // 文本，默认为数值文本
+                        calculable : true,
+                        color: ['#c23531','#61a0a8']
+                    },
+                    toolbox: {
+                        show: true,
+                        orient : 'vertical',
+                        left: 'right',
+                        top: 'center',
+                        feature : {
+                            mark : {show: true},
+                            dataView : {show: true, readOnly: false},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    series : [
+                        {
+                            name: 'FansOfDisney',
+                            type: 'map',
+                            mapType: 'china',
+                            roam: false,
+                            label: {
+                                normal: {
+                                    show: false
+                                },
+                                emphasis: {
+                                    show: true,
+
+                                }
+                            },
+                            data:disneyData
+                        }
+                    ]
+
+                },
+                media:[]
+            }
+                    ;
+            if (option && typeof option === "object") {
+                var startTime = +new Date();
+                myChart.setOption(option, true);
+                var endTime = +new Date();
+                var updateTime = endTime - startTime;
+                console.log("Time used:", updateTime);
+            }
+        </script>
+
+</body>
+</html>
